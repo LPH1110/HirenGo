@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HirenGo/static/css/main.6e77568f.css",
+    "main.js": "/HirenGo/static/js/main.95ddd2ad.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/HirenGo/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/HirenGo/index.html",
+    "main.6e77568f.css.map": "/HirenGo/static/css/main.6e77568f.css.map",
+    "main.95ddd2ad.js.map": "/HirenGo/static/js/main.95ddd2ad.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/HirenGo/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e77568f.css",
+    "static/js/main.95ddd2ad.js"
+  ]
+}
