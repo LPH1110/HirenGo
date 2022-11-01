@@ -1,9 +1,11 @@
+import { Header, Footer } from '../components';
+
 function DefaultLayout({ children }) {
     return (
         <section>
-            <header>header</header>
+            <Header />
             <section>{children}</section>
-            <footer>footer</footer>
+            <Footer />
         </section>
     );
 }

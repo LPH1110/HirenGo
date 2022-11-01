@@ -1,5 +1,11 @@
+import { Landing } from '~/components';
+
 function Home() {
-    return <div>Home page</div>;
+    return (
+        <section>
+            <Landing />
+        </section>
+    );
 }
 
 export default Home;
