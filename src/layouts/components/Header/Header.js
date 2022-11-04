@@ -1,6 +1,7 @@
 import { Button, Image } from '~/components';
 import images from '~/assets';
 import { NavLink } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 
 const navigations = [
     {
@@ -26,11 +27,36 @@ const navigations = [
 ];
 
 function Header() {
+    const header = useRef();
     const textPrimaryColor = {
         color: 'rgb(14, 165, 233)',
     };
+
+    const handleScroll = () => {
+        if (window.scrollY > 20) {
+            header.current.classList.add('shadow-[0_5px_24px_0_rgba(148,163,184,0.6)]');
+        } else {
+            header.current.classList.remove('shadow-[0_5px_24px_0_rgba(148,163,184,0.6)]');
+        }
+    };
+
+    useEffect(() => {
+        if (header.current) {
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        return () => {
+            if (header.current) {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, []);
+
     return (
-        <header className="bg-white px-10 w-screen flex justify-between items-center fixed inset-x-0 top-0">
+        <header
+            ref={header}
+            className="z-50 ease-in-out duration-300 bg-white px-10 w-screen flex justify-between items-center fixed inset-x-0 top-0"
+        >
             <a href="/" className="block h-16">
                 <Image className="h-full" src={images.logoTransparent} alt="logo" />
             </a>
@@ -64,7 +90,7 @@ function Header() {
                 <Button className="ease duration-200 hover:opacity-70 rounded-full border text-sky-500 border-sky-500 text-sm">
                     Log in
                 </Button>
-                <Button className="ease duration-200 hover:bg-sky-400 rounded-full border text-sm bg-sky-500 text-slate-100">
+                <Button className="font-semibold ease duration-200 hover:bg-sky-400 rounded-full border text-sm bg-sky-500 text-slate-100">
                     Sign up
                 </Button>
             </div>

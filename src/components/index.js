@@ -3,3 +3,8 @@ export { default as Button } from './Button';
 export { default as Toast } from './Toast';
 export { default as Image } from './Image';
 export { default as Landing } from './Landing';
+export { default as Features } from './Features';
+export { default as SubscribeBox } from './SubscribeBox';
+export { default as Reviews } from './Reviews';
+export { default as SliderWrapper } from './SliderWrapper';
+export { default as ReviewCard } from './ReviewCard';
