@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Image } from '~/components';
 import images from '~/assets';
 import classNames from 'classnames/bind';
-import styles from './SliderWrapper.module.scss';
+import styles from './HorizontalSlider.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -15,7 +15,7 @@ function PrevArrow({ className, style, onClick }) {
             className={cx(
                 'prevArrow',
                 className,
-                `rounded-full hover:opacity-80 shadow-[0_5px_12px_0_rgba(56,189,248,0.8)] ease duration-200`,
+                `z-10 rounded-full hover:opacity-80 shadow-[0_5px_12px_0_rgba(56,189,248,0.8)] ease duration-200`,
             )}
             style={{ ...style }}
             onClick={onClick}
@@ -31,7 +31,7 @@ function NextArrow({ className, style, onClick }) {
             className={cx(
                 'nextArrow',
                 className,
-                'rounded-full hover:opacity-80 shadow-[0_5px_12px_0_rgba(56,189,248,0.8)] ease duration-200',
+                'z-10 rounded-full hover:opacity-80 shadow-[0_5px_12px_0_rgba(56,189,248,0.8)] ease duration-200',
             )}
             style={{ ...style }}
             onClick={onClick}
@@ -41,7 +41,7 @@ function NextArrow({ className, style, onClick }) {
     );
 }
 
-function SliderWrapper({ settings, children, autoplay }) {
+function HorizontalSlider({ settings, children, autoplay }) {
     const config = {
         ...settings,
         autoplay,
@@ -49,10 +49,10 @@ function SliderWrapper({ settings, children, autoplay }) {
         nextArrow: <NextArrow />,
     };
     return (
-        <Slider autoplaySpeed={3000} {...config}>
+        <Slider className="mx-6 px-4" autoplaySpeed={3000} {...config}>
             {children}
         </Slider>
     );
 }
 
-export default SliderWrapper;
+export default HorizontalSlider;

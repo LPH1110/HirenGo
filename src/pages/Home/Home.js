@@ -1,4 +1,4 @@
-import { Landing, Features, SubscribeBox, Reviews, BoxContainer } from '~/components';
+import { Landing, Features, SubscribeBox, Reviews, BoxContainer, Products, Brands } from '~/components';
 
 function Home() {
     return (
@@ -6,6 +6,8 @@ function Home() {
             <Landing />
             <BoxContainer />
             <Features />
+            <Products />
+            <Brands />
             <Reviews />
             <SubscribeBox />
         </section>

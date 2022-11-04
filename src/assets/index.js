@@ -14,6 +14,7 @@ const images = {
     avatar2: require('./images/imgs/avatar2.jpg'),
     avatar3: require('./images/imgs/avatar3.jpg'),
     avatar4: require('./images/imgs/avatar4.jpg'),
+    userIcon: require('./images/imgs/user-icon.png'),
 };
 
 export default images;

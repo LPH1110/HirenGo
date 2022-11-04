@@ -1,4 +1,4 @@
-import { default as SliderWrapper } from '../SliderWrapper';
+import { default as VerticalSlider } from '../VerticalSlider';
 import { default as ReviewCard } from '../ReviewCard';
 import images from '~/assets';
 
@@ -97,7 +97,7 @@ function Reviews() {
     return (
         <section className="p-10">
             <h1 className="text-2xl font-bold mb-[2.1rem]">What our customers are saying?</h1>
-            <SliderWrapper autoplay={true} settings={settings}>
+            <VerticalSlider autoplay={true} settings={settings}>
                 {reviews.map((review) => (
                     <div key={review.id}>
                         <div className="mx-2">
@@ -111,7 +111,7 @@ function Reviews() {
                         </div>
                     </div>
                 ))}
-            </SliderWrapper>
+            </VerticalSlider>
         </section>
     );
 }

@@ -3,7 +3,7 @@ import images from '~/assets';
 
 function Landing() {
     return (
-        <section className="px-10 h-[30rem] flex items-center justify-between mt-6">
+        <section className="mb-10 px-10 h-[30rem] flex items-center justify-between mt-6">
             <div className="w-[40%]">
                 <h1 className="text-4xl font-semibold">Easy and fast way to rent your car</h1>
                 <p className="my-5 text-sm">
