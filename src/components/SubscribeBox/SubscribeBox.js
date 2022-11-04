@@ -11,8 +11,8 @@ function SubscribeBox() {
                 </p>
                 <div className="mb-2 flex items-center justify-between w-full">
                     <div className="focus-within:outline-none ring-1 ring-slate-200 focus-within:ring-2 focus-within:ring-sky-400 shadow-sm mr-4 flex-1 rounded-lg p-2 bg-white flex items-center">
-                        <span className="ml-1 mr-2">
-                            <Image className="text-slate-700" src={images.envelope} alt="envelope" />
+                        <span className="text-slate-400 ml-1 mr-2">
+                            <i className="flex fi fi-rr-envelope"></i>
                         </span>
                         <input
                             className="w-full text-slate-600 outline-none bg-transparent"

@@ -8,3 +8,4 @@ export { default as SubscribeBox } from './SubscribeBox';
 export { default as Reviews } from './Reviews';
 export { default as SliderWrapper } from './SliderWrapper';
 export { default as ReviewCard } from './ReviewCard';
+export { default as BoxContainer } from './BoxContainer';

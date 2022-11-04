@@ -27,7 +27,7 @@ function Features() {
                 {features.map((feature) => (
                     <div
                         key={feature.id}
-                        className="ease duration-300 rounded-[2rem] p-5 hover:shadow-[0_5px_24px_0_rgba(148,163,184,0.4)]"
+                        className="ease duration-300 rounded-[2rem] p-5 hover:shadow-[0_5px_24px_0_rgba(148,163,184,0.6)]"
                     >
                         <div className="flex justify-center mb-4">
                             <div className="bg-sky-300 w-20 h-20"></div>
