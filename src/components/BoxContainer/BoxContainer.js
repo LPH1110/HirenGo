@@ -34,7 +34,7 @@ const boxItems = [
 
 function BoxContainer() {
     return (
-        <div className="bg-sky-100 px-10 py-10 flex items-center justify-between">
+        <div className="bg-sky-100 px-10 py-10 flex items-center justify-center">
             <div className="bg-white shadow-[0_5px_24px_0_rgba(148,163,184,0.6)] py-10 px-10 rounded-[2rem] flex items-end">
                 <div className="flex items-center">
                     {boxItems.map((box) => (
