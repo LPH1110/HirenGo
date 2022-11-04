@@ -30,7 +30,16 @@ function Features() {
                         className="ease duration-300 rounded-[2rem] p-5 hover:shadow-[0_5px_24px_0_rgba(148,163,184,0.6)]"
                     >
                         <div className="flex justify-center mb-4">
-                            <div className="bg-sky-300 w-20 h-20"></div>
+                            <div className="bg-sky-100 w-20 h-20">
+                                <div className="flex h-1/2">
+                                    <div className="w-1/2 bg-sky-400"></div>
+                                    <div className="w-1/2"></div>
+                                </div>
+                                <div className="flex h-1/2">
+                                    <div className="w-1/2"></div>
+                                    <div className="w-1/2 bg-sky-400"></div>
+                                </div>
+                            </div>
                         </div>
                         <div className="text-center">
                             <h3 className="text-lg font-semibold">{feature.title}</h3>
