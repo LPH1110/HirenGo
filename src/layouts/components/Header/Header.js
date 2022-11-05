@@ -87,10 +87,16 @@ function Header() {
             </nav>
 
             <div>
-                <Button className="ease duration-200 hover:opacity-70 rounded-full border text-sky-500 border-sky-500 text-sm">
+                <Button
+                    to="/login"
+                    className="ease duration-200 hover:opacity-70 rounded-full border text-sky-500 border-sky-500 text-sm"
+                >
                     Log in
                 </Button>
-                <Button className="font-semibold ease duration-200 hover:bg-sky-400 rounded-full border text-sm bg-sky-500 text-slate-100">
+                <Button
+                    to="/signup"
+                    className="font-semibold ease duration-200 hover:bg-sky-400 rounded-full border text-sm bg-sky-500 text-slate-100"
+                >
                     Sign up
                 </Button>
             </div>
