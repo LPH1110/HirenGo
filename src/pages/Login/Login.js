@@ -31,7 +31,7 @@ function Login() {
 
     const handleSubmit = async (data) => {
         try {
-            const res = await axios.post('http://localhost:3001/auth/login', data);
+            const res = await axios.post('http://0.0.0.0:3001/auth/login', data);
             const { error } = res.data;
             setShowToast(true);
             setTimeout(() => {
