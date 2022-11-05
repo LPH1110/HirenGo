@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/HirenGo/static/css/main.8a6a1a41.css",
-    "main.js": "/HirenGo/static/js/main.54a9e44f.js",
+    "main.css": "/HirenGo/static/css/main.0de14e13.css",
+    "main.js": "/HirenGo/static/js/main.cadef666.js",
     "static/js/787.c4e7f8f9.chunk.js": "/HirenGo/static/js/787.c4e7f8f9.chunk.js",
     "static/media/landing-wallpaper.png": "/HirenGo/static/media/landing-wallpaper.6ed77f756a72da6c5d2b.png",
     "static/media/avatar4.jpg": "/HirenGo/static/media/avatar4.001235cf94681afa8de3.jpg",
@@ -14,12 +14,12 @@
     "static/media/slick.woff": "/HirenGo/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/HirenGo/index.html",
     "static/media/envelope.svg": "/HirenGo/static/media/envelope.3b06dceba9d00fcd2089d065beb3d22f.svg",
-    "main.8a6a1a41.css.map": "/HirenGo/static/css/main.8a6a1a41.css.map",
-    "main.54a9e44f.js.map": "/HirenGo/static/js/main.54a9e44f.js.map",
+    "main.0de14e13.css.map": "/HirenGo/static/css/main.0de14e13.css.map",
+    "main.cadef666.js.map": "/HirenGo/static/js/main.cadef666.js.map",
     "787.c4e7f8f9.chunk.js.map": "/HirenGo/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a6a1a41.css",
-    "static/js/main.54a9e44f.js"
+    "static/css/main.0de14e13.css",
+    "static/js/main.cadef666.js"
   ]
 }
