@@ -1,5 +1,7 @@
+import Error from '../Error';
+
 function About() {
-    return <div>About page</div>;
+    return <Error />;
 }
 
 export default About;

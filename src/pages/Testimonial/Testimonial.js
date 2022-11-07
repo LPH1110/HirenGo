@@ -1,5 +1,7 @@
+import Error from '../Error';
+
 function Testimonial() {
-    return <div>Testimonial page</div>;
+    return <Error />;
 }
 
 export default Testimonial;

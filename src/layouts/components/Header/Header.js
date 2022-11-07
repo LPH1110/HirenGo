@@ -33,9 +33,9 @@ function Header() {
     };
 
     const handleScroll = () => {
-        if (window.scrollY > 20) {
+        if (header.current && window.scrollY > 20) {
             header.current.classList.add('shadow-[0_5px_24px_0_rgba(148,163,184,0.6)]');
-        } else {
+        } else if (header.current) {
             header.current.classList.remove('shadow-[0_5px_24px_0_rgba(148,163,184,0.6)]');
         }
     };
@@ -55,9 +55,9 @@ function Header() {
     return (
         <header
             ref={header}
-            className="z-50 ease-in-out duration-300 bg-white px-10 w-screen flex justify-between items-center fixed inset-x-0 top-0"
+            className="z-[10000] ease-in-out duration-300 bg-white px-10 w-screen flex justify-between items-center fixed inset-x-0 top-0"
         >
-            <a href="/" className="block h-16">
+            <a href="/" className="block h-16 outline-none">
                 <Image className="h-full" src={images.logoTransparent} alt="logo" />
             </a>
 

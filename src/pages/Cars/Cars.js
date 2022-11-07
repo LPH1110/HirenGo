@@ -1,5 +1,7 @@
+import Error from '../Error';
+
 function Cars() {
-    return <div>Cars page</div>;
+    return <Error />;
 }
 
 export default Cars;

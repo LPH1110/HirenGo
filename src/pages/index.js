@@ -4,3 +4,5 @@ export { default as Cars } from './Cars';
 export { default as Testimonial } from './Testimonial';
 export { default as Login } from './Login';
 export { default as Signup } from './Signup';
+export { default as SearchProducts } from './SearchProducts';
+export { default as Error } from './Error';

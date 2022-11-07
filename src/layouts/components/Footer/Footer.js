@@ -10,22 +10,22 @@ const quickLinks = [
             {
                 id: 0,
                 title: 'Home',
-                path: '/',
+                path: '/error',
             },
             {
                 id: 1,
                 title: 'Cars',
-                path: '/',
+                path: '/error',
             },
             {
                 id: 2,
                 title: 'How it works',
-                path: '/',
+                path: '/error',
             },
             {
                 id: 3,
                 title: 'Testimonial',
-                path: '/',
+                path: '/error',
             },
         ],
     },
@@ -36,22 +36,22 @@ const quickLinks = [
             {
                 id: 0,
                 title: 'Live Support',
-                path: '/support',
+                path: '/error',
             },
             {
                 id: 1,
                 title: 'Help',
-                path: '/help',
+                path: '/error',
             },
             {
                 id: 2,
                 title: 'FAQ',
-                path: '/faq',
+                path: '/error',
             },
             {
                 id: 3,
                 title: 'Privacy Policy',
-                path: '/privacy-policy',
+                path: '/error',
             },
         ],
     },

@@ -33,7 +33,10 @@ function Brands() {
         <section className="bg-sky-100 my-10 px-10 py-24 flex items-center justify-center">
             <div className="flex items-center">
                 {brands.map((brand) => (
-                    <div className="rounded-full w-32 ml-5 p-2 h-12 shadow-[0_5px_24px_0_rgba(148,163,184,0.6)] bg-white flex items-center justify-center">
+                    <div
+                        key={brand.id}
+                        className="rounded-full w-32 ml-5 p-2 h-12 shadow-[0_5px_24px_0_rgba(148,163,184,0.6)] bg-white flex items-center justify-center"
+                    >
                         <Image className="w-full" src={brand.thumbnail} alt="brand logo" />
                     </div>
                 ))}

@@ -4,16 +4,15 @@ import styles from './Toast.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Toast = forwardRef(({ message = '', status }, ref) => {
+const Toast = forwardRef(({ message = '', status, className }, ref) => {
     const handleRemoveToast = () => {
-        console.log('clicked');
         if (ref.current) {
             ref.current.style.animation = `0.5s ${cx('fadeOut')} ease forwards`;
         }
     };
 
     return (
-        <div ref={ref} className={cx('toast', 'fixed')}>
+        <div ref={ref} className={cx('toast', 'fixed', className)}>
             <div className={cx('toast_body', status)}>
                 <div className={cx('toast_icon')}>
                     <svg

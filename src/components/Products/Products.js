@@ -1,100 +1,134 @@
-import { default as HorizontalSlider } from '../HorizontalSlider';
-import { default as ProductCard } from '../ProductCard';
-import images from '~/assets';
+import { createRef, useEffect, useState } from 'react';
+import axios from 'axios';
+import { useStore } from '~/store';
 import Button from '../Button';
-
-const products = [
-    {
-        id: 0,
-        title: 'Honda Jazz',
-        price: 250,
-        brand: 'Honda',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 1,
-        title: 'Honda Jazz',
-        price: 250,
-        brand: 'Honda',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 2,
-        title: 'Nissan GT-R',
-        price: 250,
-        brand: 'Nissan',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 3,
-        title: 'Volkswagen Vento',
-        price: 250,
-        brand: 'Volkswagen',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 4,
-        title: 'Ferrari F8 Tributo',
-        price: 250,
-        brand: 'Ferrari',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 5,
-        title: 'BMW 3 Series',
-        price: 250,
-        brand: 'BMW',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 6,
-        title: 'Lamborghini Aventador',
-        price: 250,
-        brand: 'Lamborghini',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-    {
-        id: 7,
-        title: 'Mercedes Benz A220',
-        price: 250,
-        brand: 'Mercedes',
-        thumbnail:
-            'https://res.cloudinary.com/dzzv49yec/image/upload/v1667594944/Car%20thumbnails/2019-mercedes-benz-a220-4matic-mmp-1-1638557009-removebg-preview_fuxzme.png',
-    },
-];
+import NotFound from '../NotFound';
+import { default as HorizontalSlider } from '../HorizontalSlider';
+import ListBoxWrapper from '../ListBoxWrapper';
+import { default as ProductCard } from '../ProductCard';
 
 const filters = [
     {
         id: 0,
         title: 'Brand',
+        items: [
+            {
+                id: 0,
+                name: 'Yamaha',
+            },
+            {
+                id: 1,
+                name: 'Honda',
+            },
+            {
+                id: 2,
+                name: 'Suzuki',
+            },
+            {
+                id: 3,
+                name: 'Triumph',
+            },
+            {
+                id: 4,
+                name: 'Ducati',
+            },
+        ],
     },
     {
         id: 1,
         title: 'Type',
+        items: [
+            {
+                id: 0,
+                name: 'Scooter',
+            },
+            {
+                id: 1,
+                name: 'Manual',
+            },
+            {
+                id: 2,
+                name: 'Manual clutch',
+            },
+            {
+                id: 3,
+                name: 'Sport',
+            },
+        ],
     },
     {
         id: 2,
-        title: 'Price',
-    },
-    {
-        id: 3,
-        title: 'Rating',
+        title: 'Color',
+        items: [
+            {
+                id: 0,
+                name: 'Red',
+            },
+            {
+                id: 1,
+                name: 'Blue',
+            },
+            {
+                id: 2,
+                name: 'White',
+            },
+            {
+                id: 3,
+                name: 'Black',
+            },
+        ],
     },
 ];
 
 function Products() {
+    const filterRef = createRef();
+    const [state, dispatch] = useStore();
+    const { filterForm } = state;
+    const [products, setProducts] = useState([]);
+    const [notFound, setShowNotFound] = useState(true);
+    const [slidesToShow, setSlidesToShow] = useState(0);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const res = await axios.post('http://localhost:3001/bikes/filter', filterForm);
+                setProducts(res.data);
+                setSlidesToShow(() => (res.data.length < 4 ? res.data.length : 4));
+                if (res.data.length === 0) {
+                    setShowNotFound(true);
+                } else {
+                    setShowNotFound(false);
+                }
+            } catch (e) {
+                setShowNotFound(true);
+                console.error(e);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
     const settings = {
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow,
         slidesToScroll: 1,
         speed: 3000,
+    };
+
+    const handleApplyFilters = async () => {
+        try {
+            const res = await axios.post('http://localhost:3001/bikes/filter', filterForm);
+            setProducts(res.data);
+            setSlidesToShow(() => (res.data.length < 4 ? res.data.length : 4));
+            if (res.data.length === 0) {
+                setShowNotFound(true);
+            } else {
+                setShowNotFound(false);
+            }
+        } catch (e) {
+            setShowNotFound(true);
+            console.error(e);
+        }
     };
 
     return (
@@ -103,27 +137,29 @@ function Products() {
                 <h1 className="text-2xl font-bold mb-[2.1rem]">Book Your Suitable Car</h1>
                 <div className="flex items-start">
                     {filters.map((filter) => (
-                        <button
-                            key={filter.id}
-                            className="mr-2 py-2 px-3 flex items-center outline-none hover:border-sky-400 ease duration-200 hover:text-sky-400 h-full border-slate-100 border text-slate-400 rounded-lg text-sm"
-                        >
-                            {filter.title}
-                            <span className="ml-4">
-                                <i class="flex fi fi-ss-angle-small-down"></i>
-                            </span>
-                        </button>
+                        <ListBoxWrapper key={filter.id} data={filter} />
                     ))}
+                    <Button
+                        onClick={handleApplyFilters}
+                        className="ml-2 bg-sky-500 hover:bg-sky-400 ease-in-out duration-200 rounded-lg text-slate-100"
+                    >
+                        Apply filters
+                    </Button>
                 </div>
             </div>
-            <HorizontalSlider autoplay={true} settings={settings}>
-                {products.map((product) => (
-                    <div key={product.id}>
-                        <div className="mx-2">
-                            <ProductCard data={product} />
+            {!notFound ? (
+                <HorizontalSlider autoplay={true} settings={settings}>
+                    {products.map((product) => (
+                        <div key={product._id}>
+                            <div className="mx-2">
+                                <ProductCard data={product} />
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </HorizontalSlider>
+                    ))}
+                </HorizontalSlider>
+            ) : (
+                <NotFound />
+            )}
         </section>
     );
 }
