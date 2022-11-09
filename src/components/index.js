@@ -13,3 +13,4 @@ export { default as BoxContainer } from './BoxContainer';
 export { default as Products } from './Products';
 export { default as ProductCard } from './ProductCard';
 export { default as Brands } from './Brands';
+export { default as ReceiptCard } from './ReceiptCard';

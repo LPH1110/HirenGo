@@ -19,7 +19,10 @@ function ProductCard({ data }) {
                 </p>
             </div>
 
-            <Button className="w-full bg-sky-500 hover:bg-sky-400 ease-in-out duration-200 text-slate-100 rounded-lg mt-4">
+            <Button
+                to={`/products/${data._id}`}
+                className="w-full bg-sky-500 hover:bg-sky-400 ease-in-out duration-200 text-slate-100 rounded-lg mt-4"
+            >
                 Rent this car
             </Button>
         </div>

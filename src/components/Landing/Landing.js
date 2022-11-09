@@ -4,7 +4,7 @@ import images from '~/assets';
 function Landing() {
     return (
         <section className="mb-10 px-10 h-[30rem] flex items-center justify-between mt-6">
-            <div className="w-[40%]">
+            <div className="animate-slide-l-in w-[40%]">
                 <h1 className="text-4xl font-semibold">Easy and fast way to rent your car</h1>
                 <p className="my-5 text-sm">
                     HirenGo is the most used car rental service in UK. Based on ratings and reviews from real users.

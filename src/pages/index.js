@@ -6,3 +6,5 @@ export { default as Login } from './Login';
 export { default as Signup } from './Signup';
 export { default as SearchProducts } from './SearchProducts';
 export { default as Error } from './Error';
+export { default as ProductDetail } from './ProductDetail';
+export { default as Dashboard } from './Dashboard';

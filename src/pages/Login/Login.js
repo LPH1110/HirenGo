@@ -40,12 +40,16 @@ function Login() {
 
             if (!error) {
                 setToastBody({ message: 'Logged in successfully!', status: 'success' });
-                const { accessToken } = res.data;
+                const { accessToken, access } = res.data;
                 localStorage.setItem('accessToken', accessToken);
                 dispatch(actions.setUserSession(res.data, true));
 
                 setTimeout(() => {
-                    navigate('/');
+                    if (access === 'admin') {
+                        navigate('/dashboard');
+                    } else {
+                        navigate('/');
+                    }
                 }, 2000);
             } else {
                 setToastBody({ message: error, status: 'error' });
