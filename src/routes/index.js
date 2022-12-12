@@ -9,6 +9,7 @@ import {
     Error,
     ProductDetail,
     Dashboard,
+    Payment,
 } from '~/pages';
 import { DefaultLayout, WrapperLayout } from '~/layouts';
 
@@ -23,6 +24,7 @@ const publicRoutes = [
     { id: 7, path: '/error', component: Error, layout: DefaultLayout },
     { id: 8, path: '/products/:productId', component: ProductDetail, layout: DefaultLayout },
     { id: 8, path: '/dashboard', component: Dashboard, layout: WrapperLayout },
+    { id: 9, path: '/payment', component: Payment, layout: DefaultLayout },
 ];
 
 export { publicRoutes };

@@ -39,7 +39,7 @@ function ListBoxWrapper({ data }) {
                                 key={item.id}
                                 value={item}
                                 as={Fragment}
-                                onClick={() => handleSetFilterForm(data.title.toLowerCase(), item.name)}
+                                onClick={() => handleSetFilterForm(data.title.toLowerCase(), item.name.toLowerCase())}
                             >
                                 {({ active, selected }) => {
                                     return (

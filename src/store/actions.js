@@ -1,4 +1,4 @@
-import { SET_USER_SESSION, SET_SEARCH_PRODUCT_FORM, SET_FILTER_FORM } from './constants';
+import { SET_USER_SESSION, SET_SEARCH_PRODUCT_FORM, SET_FILTER_FORM, SET_CHOOSE_TO_RENT } from './constants';
 
 export const setUserSession = (...payload) => {
     return {
@@ -6,6 +6,11 @@ export const setUserSession = (...payload) => {
         payload,
     };
 };
+
+export const setChooseToRent = (payload) => ({
+    type: SET_CHOOSE_TO_RENT,
+    payload,
+});
 
 export const setSearchProductForm = (key, value) => {
     return {

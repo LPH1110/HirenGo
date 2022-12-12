@@ -1,4 +1,4 @@
-import { SET_USER_SESSION, SET_SEARCH_PRODUCT_FORM, SET_FILTER_FORM } from './constants';
+import { SET_USER_SESSION, SET_SEARCH_PRODUCT_FORM, SET_FILTER_FORM, SET_CHOOSE_TO_RENT } from './constants';
 
 const initState = {
     user: {},
@@ -10,14 +10,23 @@ const initState = {
         returnDate: '',
     },
     filterForm: {
-        brand: 'Yamaha',
-        type: 'Scooter',
-        color: 'Red',
+        brand: 'yamaha',
+        type: 'scooter',
+        color: 'red',
     },
+    chooseToRent: {},
 };
 
 function reducer(state, action) {
     switch (action.type) {
+        case SET_CHOOSE_TO_RENT:
+            console.log(action.payload);
+            return {
+                ...state,
+                chooseToRent: {
+                    ...action.payload,
+                },
+            };
         case SET_USER_SESSION:
             return {
                 ...state,
